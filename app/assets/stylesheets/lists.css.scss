@@ -1,0 +1,22 @@
+// Place all the styles related to the lists controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+html { height: 100% }
+body { height: 100%; margin: 50px; padding: 0 }
+
+.aParent div {
+  float: left;
+  clear: none; 
+}
+
+.divFavourites div {
+  margin: 50px;
+  float: left;
+  clear: none;
+}
+
+.divPublic div {
+  margin: 50px;
+  float: left;
+  clear: none;
+}

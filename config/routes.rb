@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
-  get 'welcome/index'
+  resources :lists
+  get 'lists/index'
+  get 'lists/create'
 
-  devise_for :users
+  resources :tasks
+
+  get 'welcome/index'
+  get 'tasks', to: 'lists#get_tasks'
+
+  devise_for :users, :controllers => { :registrations => "registrations" }
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

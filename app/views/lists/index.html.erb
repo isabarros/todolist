@@ -1,0 +1,58 @@
+<div class="aParent">  
+  <div>
+    <h1>Minhas Listas</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @lists.each do |list| %>
+          <div style="padding-bottom: 20px">
+            <tr>
+              <td style="padding-right: 20px"><%= list.name %></td>
+              <td><%= button_to 'Ver', list, class: 'btn btn-primary btn-xs btn-lg' %></td>
+              <td><%= button_to 'Editar', edit_list_path(list), class: 'btn btn-primary btn-xs btn-lg' %></td>
+              <td><%= button_to 'Remover', list, { class: 'btn btn-danger btn-xs btn-lg', method: :delete, data: { confirm: 'Are you sure?' } }%></td>
+            </tr>
+          </div>
+        <% end %>
+      </tbody>
+    </table>
+
+    <br>
+    <%= button_to "Nova Lista", new_list_path, :method => "get" %>
+  </div>
+
+  <div class="divFavourites">
+    <h1>Minhas Listas Favoritas</h1>
+
+  </div>
+
+  <div class="divPublic">
+    <h1>Listas Públicas</h1>
+    
+  </div>
+</div>
+
+<script type="text/javascript">
+    
+    $("#create-list-button").click(function(e) {
+      $.ajax({
+        type: "GET",
+        url: "<%= tasks_path %>",
+        data: {},
+        success: function(data) {
+          alert('Passou');
+        },
+        error: function(response) {
+          alert('Ocorreu um erro e a requisição não foi realizada.');
+        }
+      });
+      e.preventDefault();
+    });
+
+</script>
