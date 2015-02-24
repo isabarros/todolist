@@ -10,6 +10,7 @@ class ListsController < ApplicationController
   end
 
   def create
+    debugger
     @list = List.new(list_params)
 
     respond_to do |format|
@@ -49,6 +50,8 @@ class ListsController < ApplicationController
     end
 
     def list_params
-      params.require(:list).permit(:name)
+      result_params = params.require(:list).permit(:name)
+      result_params['user_id'] = current_user.id
+      result_params
     end
 end
