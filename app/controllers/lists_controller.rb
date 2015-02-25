@@ -2,7 +2,7 @@ class ListsController < ApplicationController
   before_action :set_list, only: [:show, :edit, :update, :destroy]
 
   def index
-    @lists = List.all
+    @lists = List.where(user: current_user)
   end
 
   def new
@@ -10,7 +10,6 @@ class ListsController < ApplicationController
   end
 
   def create
-    debugger
     @list = List.new(list_params)
 
     respond_to do |format|
