@@ -1,12 +1,7 @@
 Rails.application.routes.draw do
   resources :lists
-  get 'lists/index'
-  get 'lists/create'
 
   resources :tasks
-
-  get 'welcome/index'
-  get 'tasks', to: 'lists#get_tasks'
 
   devise_for :users, :controllers => { :registrations => "registrations", :sessions => "sessions" }
 
