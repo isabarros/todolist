@@ -30,7 +30,8 @@ gem 'devise'
 
 gem 'byebug'
 
-gem 'rspec'
+gem 'rspec-rails'
+gem 'shoulda-matchers'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
