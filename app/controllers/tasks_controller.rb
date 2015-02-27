@@ -10,7 +10,7 @@ class TasksController < ApplicationController
   end
 
   def create
-    @list = List.find(params[:id])
+    @list = List.find(params[:list_id])
     @task = @list.tasks.new(task_params)
 
     respond_to do |format|
