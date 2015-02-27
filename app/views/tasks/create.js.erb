@@ -1,4 +1,7 @@
 <% if @task.valid? %>
+	var partial = "<%= j(render 'task_description', task: @task) %>";
+	$(".tasks_list").append(partial);
+	$(".description").val('');
 <% else %>
     var partial = "<%= j(render 'errors', errors: @task.errors) %>";
     $(".error_explanation").remove();

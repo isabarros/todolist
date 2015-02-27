@@ -7,16 +7,16 @@
 <%= form_for [@list, Task.new], remote: true do |t| %>
   <div class="field">
     <%= t.label "Nova tarefa:", for: :task_description %>
-    <%= t.text_field :description %>
+    <%= t.text_field :description, class: :description, autocomplete: :off %>
   	<%= t.submit 'Adicionar', class: 'btn btn-primary btn-xs'%>
   </div>
 
 <% end %>
 
-<ol>
-	<li>Tarefa 1
-		<%= button_to 'Remover', List.new, { class: 'btn btn-danger btn-xs', method: :delete, data: { confirm: 'Are you sure?' } }%>
-	</li>
+<ol class="tasks_list">
+	<% @list.tasks.each do |t| %>
+		<%= render 'tasks/task_description', task: t %>
+	<% end %>
 </ol>
 
 <%= link_to 'Voltar', lists_path, class: 'btn btn-default' %>
