@@ -33,6 +33,10 @@ gem 'byebug'
 gem 'rspec-rails'
 gem 'shoulda-matchers'
 
+group :development, :test do
+  gem 'factory_girl_rails', '~> 4.5'
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
