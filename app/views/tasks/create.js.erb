@@ -1,0 +1,6 @@
+<% if @task.valid? %>
+<% else %>
+    var partial = "<%= j(render 'errors', errors: @task.errors) %>";
+    $(".error_explanation").remove();
+    $(".new_task").prepend(partial);
+<% end %>
