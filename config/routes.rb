@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :lists
+  resources :lists do
+    resources :tasks, only: :create
+  end
 
   resources :tasks
 
