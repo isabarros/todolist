@@ -1,0 +1,3 @@
+<% if @task.destroyed? %>
+	$("#<%= dom_id @task %>").slideUp( function(){ $(this).remove(); } );
+<% end %>
