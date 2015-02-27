@@ -4,7 +4,7 @@
   <%= @list.name %>
 </h1>
 
-<%= form_for [@list, Task.new] do |t| %>
+<%= form_for [@list, Task.new], remote: true do |t| %>
   <div class="field">
     <%= t.label "Nova tarefa:", for: :task_description %>
     <%= t.text_field :description %>

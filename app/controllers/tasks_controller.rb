@@ -10,15 +10,14 @@ class TasksController < ApplicationController
   end
 
   def create
-    @task = Task.new(task_params)
+    @list = List.find(params[:list_id])
+    @task = @list.tasks.new(task_params)
 
     respond_to do |format|
       if @task.save
-        format.html { redirect_to @task, notice: 'Task was successfully created.' }
-        format.json { render :show, status: :created, location: @task }
+        format.js
       else
-        format.html { render :new }
-        format.json { render json: @task.errors, status: :unprocessable_entity }
+        format.js { render 'create', status: :unprocessable_entity }
       end
     end
   end
