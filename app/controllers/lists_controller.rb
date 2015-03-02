@@ -1,5 +1,5 @@
 class ListsController < ApplicationController
-  before_action :set_list, only: [:show, :edit, :update, :destroy]
+  before_action :set_list, only: [:show, :edit, :update, :destroy, :publish]
 
   def index
     @lists = List.where(user: current_user)
@@ -41,6 +41,10 @@ class ListsController < ApplicationController
       format.html { redirect_to lists_url, notice: 'A lista foi removida com sucesso.' }
       format.json { head :no_content }
     end
+  end
+
+  def publish
+    @list.update_attribute(:public, true)
   end
 
   private

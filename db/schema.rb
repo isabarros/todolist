@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150220155117) do
+ActiveRecord::Schema.define(version: 20150302213931) do
 
   create_table "lists", force: true do |t|
     t.integer  "user_id"
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "public",     default: false
   end
 
   add_index "lists", ["user_id"], name: "index_lists_on_user_id"

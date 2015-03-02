@@ -8,17 +8,19 @@
           <th></th>
           <th></th>
           <th></th>
+          <th></th>
         </tr>
       </thead>
 
       <tbody>
         <% @lists.each do |list| %>
-          <div style="padding-bottom: 20px">
+          <div>
             <tr>
               <td style="padding-right: 20px"><%= list.name %></td>
               <td><%= link_to 'Ver', list, class: 'btn btn-primary btn-xs' %></td>
               <td><%= link_to 'Editar', edit_list_path(list), class: 'btn btn-primary btn-xs' %></td>
               <td><%= button_to 'Remover', list, { class: 'btn btn-danger btn-xs', method: :delete, data: { confirm: 'Are you sure?' } }%></td>
+              <td><%= link_to 'Publicar', publish_list_path(list.id), { remote: true, method: :put, class: 'btn btn-success btn-xs' } %> </td>
             </tr>
           </div>
         <% end %>
@@ -30,7 +32,6 @@
 
   <div class="divFavourites">
     <h1>Minhas Listas Favoritas</h1>
-
   </div>
 
   <div class="divPublic">
