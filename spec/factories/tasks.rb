@@ -2,6 +2,7 @@
 
 FactoryGirl.define do
   factory :task do
+  	list
     sequence(:description) { |n| "Minha tarefa incrível n. #{n}" }
   end
 end
