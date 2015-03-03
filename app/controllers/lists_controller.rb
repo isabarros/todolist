@@ -45,6 +45,13 @@ class ListsController < ApplicationController
 
   def publish
     @list.update_attribute(:public, true)
+    respond_to do |format|
+      if @list.save
+        format.js
+      else
+        format.json { render json: @list.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   private

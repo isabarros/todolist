@@ -1,0 +1,8 @@
+<li id='<%= dom_id list %>' >
+	<div>
+		<%= list.name %>
+		<%= button_to 'Ver', list, class: 'btn btn-primary btn-xs' %>
+		<%= button_to 'Remover', list, { class: 'btn btn-danger btn-xs', method: :delete, data: { confirm: 'Are you sure?' }, remote: true, format: :js }%>
+		<%= link_to 'Favorita', list, { class: 'btn btn-warning btn-xs', method: :put, remote: true, format: :js }%>
+	</div>
+</li>

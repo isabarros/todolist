@@ -36,6 +36,10 @@
 
   <div class="divPublic">
     <h1>Listas Públicas</h1>
-    
+    <ul class="lists_list">
+      <% @lists.each do |l| %>
+        <%= render 'list_name', list: l %>
+      <% end %>
+    </ul>
   </div>
 </div>
