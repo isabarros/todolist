@@ -1,0 +1,3 @@
+<% if @list.destroyed? %>
+	$("#<%= dom_id @list %>").slideUp( function(){ $(this).remove(); } );
+<% end %>

@@ -2,7 +2,8 @@ class ListsController < ApplicationController
   before_action :set_list, only: [:show, :edit, :update, :destroy, :publish]
 
   def index
-    @lists = List.where(user: current_user)
+    @lists = List.where(user: current_user).decorate
+    @public_lists = List.public_lists
   end
 
   def new
@@ -45,6 +46,17 @@ class ListsController < ApplicationController
 
   def publish
     @list.update_attribute(:public, true)
+    respond_to do |format|
+      if @list.save
+        format.js
+      else
+        format.json { render json: @list.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def unpublish
+    @list.update_attribute(:public, false)
     respond_to do |format|
       if @list.save
         format.js

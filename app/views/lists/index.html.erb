@@ -13,17 +13,7 @@
       </thead>
 
       <tbody>
-        <% @lists.each do |list| %>
-          <div>
-            <tr>
-              <td style="padding-right: 20px"><%= list.name %></td>
-              <td><%= link_to 'Ver', list, class: 'btn btn-primary btn-xs' %></td>
-              <td><%= link_to 'Editar', edit_list_path(list), class: 'btn btn-primary btn-xs' %></td>
-              <td><%= button_to 'Remover', list, { class: 'btn btn-danger btn-xs', method: :delete, data: { confirm: 'Are you sure?' } }%></td>
-              <td><%= link_to 'Publicar', publish_list_path(list.id), { remote: true, method: :put, class: 'btn btn-success btn-xs' } %> </td>
-            </tr>
-          </div>
-        <% end %>
+        <%= render partial: 'private_list', collection: @lists %>
       </tbody>
     </table>
 
@@ -36,10 +26,17 @@
 
   <div class="divPublic">
     <h1>Listas Públicas</h1>
-    <ul class="lists_list">
-      <% @lists.each do |l| %>
-        <%= render 'list_name', list: l %>
-      <% end %>
-    </ul>
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @public_lists %>
+      </tbody>
+    </table>
   </div>
 </div>

@@ -30,6 +30,8 @@ gem 'devise'
 
 gem 'byebug'
 
+gem 'draper'
+
 gem 'rspec-rails'
 gem 'shoulda-matchers'
 

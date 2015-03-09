@@ -1,0 +1,7 @@
+<div id='<%= dom_id list %>'>
+	<tr>
+	  <td><%= list.name %></td>
+	  <td><%= link_to 'Ver', list, class: 'btn btn-primary btn-xs' %></td>
+	  <td><%= link_to 'Favorita', list, { class: 'btn btn-warning btn-xs', method: :put, remote: true, format: :js }%></td>
+	</tr>
+</div>

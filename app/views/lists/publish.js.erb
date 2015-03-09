@@ -1,6 +1,4 @@
 <% if @list.valid? %>
-	var partial = "<%= j(render 'list_name', list: @list) %>";
-	$('.lists_list').append(partial);
-<% else %>
-	
+	var partial = "<%= j(render 'list', list: @list) %>";
+	$('.public_lists').append(partial);
 <% end %>
