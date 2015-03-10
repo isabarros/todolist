@@ -1,3 +1,4 @@
-<% if @list.destroyed? %>
-	$("#<%= dom_id @list %>").slideUp( function(){ $(this).remove(); } );
+<% if @list.valid? %>
+	$("#<%= dom_id @list, :public %>").slideUp( function(){ $(this).remove(); } );
+	$("#<%= dom_id @list, :private %>").find("#publish_button").text('Publicar').attr('href', '<%=publish_list_path(@list)%>');
 <% end %>

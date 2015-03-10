@@ -1,5 +1,5 @@
 class ListsController < ApplicationController
-  before_action :set_list, only: [:show, :edit, :update, :destroy, :publish]
+  before_action :set_list, only: [:show, :edit, :update, :destroy, :publish, :unpublish]
 
   def index
     @lists = List.where(user: current_user).decorate

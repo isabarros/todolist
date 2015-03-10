@@ -1,4 +1,5 @@
 <% if @list.valid? %>
-	var partial = "<%= j(render 'list', list: @list) %>";
-	$('.public_lists').append(partial);
+	var partial = "<%= j(render 'public_list', public_list: @list) %>";
+	$('#public_lists_table').append(partial);
+	$("#<%= dom_id @list, :private %>").find("#publish_button").text('Ocultar').attr('href', '<%=unpublish_list_path(@list)%>');
 <% end %>

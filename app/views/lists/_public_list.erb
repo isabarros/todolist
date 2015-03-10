@@ -1,7 +1,5 @@
-<div id='<%= dom_id list %>' class="public_lists">
-	<tr>
-  		<td><%= list.name %></td>
-  		<td><%= link_to 'Ver', list, class: 'btn btn-primary btn-xs' %></td>
-  		<td><%= link_to 'Favorita', list, { class: 'btn btn-warning btn-xs', method: :put, remote: true, format: :js }%></td>
-	</tr>
-</div>
+<tr id='<%= dom_id public_list, :public %>'>
+  	<td><%= public_list.name %></td>
+  	<td><%= link_to 'Ver', public_list, class: 'btn btn-primary btn-xs' %></td>
+  	<td><%= link_to 'Favorita', public_list, { class: 'btn btn-warning btn-xs', method: :put, remote: true, format: :js }%></td>
+</tr>

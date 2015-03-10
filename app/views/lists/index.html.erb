@@ -1,7 +1,7 @@
 <div class="aParent">  
   <div>
     <h1>Minhas Listas</h1>
-    <table>
+    <table id="private_lists_table">
       <thead>
         <tr>
           <th>Nome</th>
@@ -26,7 +26,7 @@
 
   <div class="divPublic">
     <h1>Listas Públicas</h1>
-    <table>
+    <table id="public_lists_table">
       <thead>
         <tr>
           <th>Nome</th>
@@ -35,7 +35,7 @@
         </tr>
       </thead>
       <tbody>
-        <%= render @public_lists %>
+        <%= render partial: 'public_list', collection: @public_lists %>
       </tbody>
     </table>
   </div>

@@ -1,9 +1,7 @@
-<div>
-	<tr>
-	  <td><%= private_list.name %></td>
-	  <td><%= link_to 'Ver', private_list, class: 'btn btn-primary btn-xs' %></td>
-	  <td><%= link_to 'Editar', edit_list_path(private_list), class: 'btn btn-primary btn-xs' %></td>
-	  <td><%= button_to 'Remover', private_list, { class: 'btn btn-danger btn-xs', method: :delete, data: { confirm: 'Are you sure?' } }%></td>
-	  <td><%= link_to private_list.public_toggle_name, private_list.public_toggle_path, { remote: true, method: :put, class: 'btn btn-success btn-xs' } %> </td>
-	</tr>
-</div>
+<tr id='<%= dom_id private_list, :private %>'>
+  <td><%= private_list.name %></td>
+  <td><%= link_to 'Ver', private_list, class: 'btn btn-primary btn-xs' %></td>
+  <td><%= link_to 'Editar', edit_list_path(private_list), class: 'btn btn-primary btn-xs' %></td>
+  <td><%= button_to 'Remover', private_list, { class: 'btn btn-danger btn-xs', method: :delete, data: { confirm: 'Are you sure?' } }%></td>
+  <td><%= link_to private_list.public_toggle_name, private_list.public_toggle_path, {id: "publish_button", remote: true, method: :put, class: 'btn btn-success btn-xs' } %> </td>
+</tr>
