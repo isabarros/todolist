@@ -20,8 +20,20 @@
     <%= link_to "Nova Lista", new_list_path, class: 'btn btn-primary' %>
   </div>
 
-  <div class="divFavourites">
+  <div class="divFavorites">
     <h1>Minhas Listas Favoritas</h1>
+    <table id="favorites_lists_table">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render partial: 'favorite_list', collection: @favorite_lists %>
+      </tbody>
+    </table>
   </div>
 
   <div class="divPublic">

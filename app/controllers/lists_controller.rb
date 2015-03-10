@@ -4,6 +4,7 @@ class ListsController < ApplicationController
   def index
     @lists = List.where(user: current_user).decorate
     @public_lists = List.public_lists
+    @favorite_lists = Favorite.where(user: current_user)
   end
 
   def new
