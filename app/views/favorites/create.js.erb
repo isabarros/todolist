@@ -1,0 +1,5 @@
+<% if @favorite_list.valid? %>
+	var partial = "<%= j(render 'lists/favorite_list', favorite_list: @favorite_list) %>";
+	$('#favorites_lists_table').append(partial);
+	$("#<%= dom_id @favorite_list, :public %>").find("#favorite_button").attr("disabled", "disabled");
+<% end %>

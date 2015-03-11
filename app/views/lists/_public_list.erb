@@ -1,5 +1,5 @@
 <tr id='<%= dom_id public_list, :public %>'>
   	<td><%= public_list.name %></td>
   	<td><%= link_to 'Ver', public_list, class: 'btn btn-primary btn-xs' %></td>
-  	<td><%= link_to 'Favorita', list_favorites_path(public_list), { class: 'btn btn-warning btn-xs', method: :post, remote: true, format: :js }%></td>
+  	<td><%= button_to 'Favorita', list_favorites_path(public_list), { id: "favorite_button", method: :post, remote: true, format: :js, class: 'btn btn-warning btn-xs' }%></td>
 </tr>

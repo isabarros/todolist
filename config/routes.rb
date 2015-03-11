@@ -5,8 +5,10 @@ Rails.application.routes.draw do
     put :publish, on: :member
     put :unpublish, on: :member
 
-    resources :favorites, only: [:create, :destroy]
+    resources :favorites, only: [:create]
   end
+
+  resources :favorites, only: [:destroy]
 
   resources :tasks
 

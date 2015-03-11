@@ -1,0 +1,4 @@
+<% if @favorite_list.valid? %>
+	$("#<%= dom_id @favorite_list, :favorite %>").slideUp( function(){ $(this).remove(); } );
+	$("#<%= dom_id @favorite_list, :public %>").find("#favorite_button").removeAttr("disabled"); 
+<% end %>
